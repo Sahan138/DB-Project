@@ -23,6 +23,7 @@ namespace Library_Management_System
             frmCreateAccount fca = new frmCreateAccount();
             this.Hide();
             fca.Show();
+           
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
@@ -49,6 +50,10 @@ namespace Library_Management_System
                     frmHome fh = new frmHome();
                     fh.Show();
                     this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter Correct Credintials");
                 }
           
                 
