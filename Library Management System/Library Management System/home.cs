@@ -45,5 +45,10 @@ namespace Library_Management_System
             this.Hide();
             fdb.Show();
         }
+
+        private void btnExitHome_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

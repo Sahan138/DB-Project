@@ -32,25 +32,16 @@ namespace Library_Management_System
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            int borrowerID, telephone, membershipDuration, branchID;
-            string borrowerName, borrowerAddress;
+                        
 
-            borrowerID = int.Parse(txtBorrowerID.Text);
-            borrowerName = txtName.Text;
-            telephone = int.Parse(txtTelephone.Text);
-            borrowerAddress = txtAddress.Text;
-            membershipDuration = int.Parse(txtMembershipDuration.Text);
-            branchID = int.Parse(txtBranchID.Text);
-
-
-            if ((txtBorrowerID.Text == "") || (borrowerName == "") || (txtTelephone.Text == "") || (borrowerAddress == "") || (txtMembershipDuration.Text == "") || (txtBranchID.Text == ""))
+            if (txtBorrowerID.Text.Trim() == "" || txtName.Text.Trim() == "" || txtTelephone.Text.Trim() == "" || txtAddress.Text.Trim() == "" || txtMembershipDuration.Text.Trim() == "" || txtBranchID.Text.Trim() == "")
             {
                 MessageBox.Show("Please fill all the fields");
             }
             else
-            {
-                SqlConnection con = new SqlConnection();
-                string qry = "insert into borrower values('"+borrowerID+ "','"+borrowerName+ "','"+telephone+ "','"+borrowerAddress+ "','"+membershipDuration+ "','"+branchID+"')";
+            { 
+                SqlConnection con = new SqlConnection(@"Data Source=MSI\SAHANSQL;Initial Catalog=DBProject;Integrated Security=True");
+                string qry = "insert into borrower values('"+ txtBorrowerID.Text.Trim() + "','"+ txtName.Text.Trim() + "','"+ txtTelephone.Text.Trim() + "','"+ txtAddress.Text.Trim() + "','"+ txtMembershipDuration.Text.Trim() + "','"+ txtBranchID.Text.Trim()+ "')";
                 SqlCommand cmd = new SqlCommand(qry, con);
 
                 try

@@ -30,6 +30,9 @@
         {
             this.btnBack = new System.Windows.Forms.Button();
             this.btnExitDB = new System.Windows.Forms.Button();
+            this.lblUserID = new System.Windows.Forms.Label();
+            this.txtUserIDDeleteBorrower = new System.Windows.Forms.TextBox();
+            this.btnDeleteDB = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -52,16 +55,46 @@
             this.btnExitDB.UseVisualStyleBackColor = true;
             this.btnExitDB.Click += new System.EventHandler(this.btnExitDB_Click);
             // 
+            // lblUserID
+            // 
+            this.lblUserID.AutoSize = true;
+            this.lblUserID.Location = new System.Drawing.Point(154, 126);
+            this.lblUserID.Name = "lblUserID";
+            this.lblUserID.Size = new System.Drawing.Size(89, 17);
+            this.lblUserID.TabIndex = 2;
+            this.lblUserID.Text = "Enter UserID";
+            // 
+            // txtUserIDDeleteBorrower
+            // 
+            this.txtUserIDDeleteBorrower.Location = new System.Drawing.Point(290, 123);
+            this.txtUserIDDeleteBorrower.Name = "txtUserIDDeleteBorrower";
+            this.txtUserIDDeleteBorrower.Size = new System.Drawing.Size(143, 22);
+            this.txtUserIDDeleteBorrower.TabIndex = 3;
+            // 
+            // btnDeleteDB
+            // 
+            this.btnDeleteDB.Location = new System.Drawing.Point(290, 170);
+            this.btnDeleteDB.Name = "btnDeleteDB";
+            this.btnDeleteDB.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteDB.TabIndex = 4;
+            this.btnDeleteDB.Text = "Delete";
+            this.btnDeleteDB.UseVisualStyleBackColor = true;
+            this.btnDeleteDB.Click += new System.EventHandler(this.btnDeleteDB_Click);
+            // 
             // frmDeleteBorrower
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteDB);
+            this.Controls.Add(this.txtUserIDDeleteBorrower);
+            this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.btnExitDB);
             this.Controls.Add(this.btnBack);
             this.Name = "frmDeleteBorrower";
             this.Text = "Delete Borrower";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,5 +102,8 @@
 
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnExitDB;
+        private System.Windows.Forms.Label lblUserID;
+        private System.Windows.Forms.TextBox txtUserIDDeleteBorrower;
+        private System.Windows.Forms.Button btnDeleteDB;
     }
 }

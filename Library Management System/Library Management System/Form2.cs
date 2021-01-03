@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Library_Management_System
 {
@@ -27,6 +28,31 @@ namespace Library_Management_System
         private void btnExitDB_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnDeleteDB_Click(object sender, EventArgs e)
+        {
+           if(txtUserIDDeleteBorrower.Text.Trim()=="")
+            {
+                MessageBox.Show("Please enter a valid userID");
+            }
+            else
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=MSI\SAHANSQL;Initial Catalog=DBProject;Integrated Security=True");
+                string qry = "delete from borrower where borrowerID = '"+txtUserIDDeleteBorrower.Text+"'";
+                SqlCommand cmd = new SqlCommand(qry, con);
+
+                try
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfully Deleted");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("" + ex);
+                }
+            }
         }
     }
 }
